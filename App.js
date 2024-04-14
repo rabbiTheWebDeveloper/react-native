@@ -10,26 +10,37 @@ export default function App() {
    }
   return (
     <View style={styles.container}>
-      <Header title="Hello Rabbi" />
-      <Text style={styles.text}>{count}</Text>
-      <Button title="Click me" onPress={() => alert('Hello')}  />
-      <Button title="Click me" onPress={increment} />
-
-
+      <View style={[styles.box1, styles.box]}/>
+      <View style={[ styles.box, styles.box2]}/>
+      <View style={[styles.box3, styles.box]}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex : 1,
+    width: 200,
+    height: 200,
+    // backgroundColor: 'red',
+    padding: 10,
+    marginTop: 50,
     alignItems: 'center',
-    justifyContent: 'center',
+
   },
-  text: {
-    color: 'red',
-    backgroundColor: 'blue',
-    fontSize: 30
-  }
+  box : {
+    width: 100,
+    height: 200,
+    marginBottom: 10,
+
+  }, 
+ box1:{
+  backgroundColor: 'green',
+ },
+ box2:{
+  backgroundColor: 'purple',
+  width: 200,
+ },  box3:{
+  backgroundColor: 'yellow',
+ }
 });
