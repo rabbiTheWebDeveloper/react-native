@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Header from './component/Header';
+
+import { Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+
 import { useState } from 'react';
 
 export default function App() {
@@ -9,38 +9,48 @@ export default function App() {
      setCount(count + 5);
    }
   return (
-    <View style={styles.container}>
-      <View style={[styles.box1, styles.box]}/>
-      <View style={[ styles.box, styles.box2]}/>
-      <View style={[styles.box3, styles.box]}/>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={[styles.box ,styles.box1]}/>
+      <View style={[styles.box, styles.box2]}/>
+      <View style={[styles.box, styles.box3]}/>
+      <View style={[styles.box ,styles.box1 , { backgroundColor: 'red'}]}/>
+      <View style={[styles.box, styles.box2]}/>
+      <View style={[styles.box, styles.box3]}/>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex : 1,
-    width: 200,
-    height: 200,
-    // backgroundColor: 'red',
     padding: 10,
-    marginTop: 50,
-    alignItems: 'center',
-
+    // justifyContent: 'center',
+    flexDirection: 'row',
+    // alignItems: 'flex-end',
+    flexWrap: 'wrap',
+  
   },
   box : {
-    width: 100,
-    height: 200,
+    // width: 100,
+    // height: 200,
     marginBottom: 10,
 
   }, 
  box1:{
+  width: 100,
+  height: 100,
   backgroundColor: 'green',
  },
  box2:{
+  width: 100,
+  height: 100,
   backgroundColor: 'purple',
-  width: 200,
+
  },  box3:{
+  width: 100,
+  height: 100,
   backgroundColor: 'yellow',
+  alignSelf: 'flex-end',
+  
  }
 });
